@@ -24,14 +24,15 @@ public class juego {
         GridLayout gridLayout = new GridLayout(filas, col);
         tab.setLayout(gridLayout);
         matrizLabel = new JLabel[filas][col];
-         for (int i = 0; i < filas; i++) {
+        for (int i = 0; i < filas; i++) {
             for (int j = 0; j < col; j++) {
                 JLabel label = new JLabel();
-                label.setPreferredSize(new Dimension(50, 100));
+                label.setPreferredSize(new Dimension(50, 50));
                 matrizLabel[i][j] = label;
                 tab.add(label);
-                label.setBackground(Color.red);
+                label.setOpaque(true); // Make the label opaque so the background color is visible
+                label.setBackground(Color.RED);
             }
-         }
+        }
     }
 }
