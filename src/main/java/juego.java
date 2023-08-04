@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.border.Border;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,22 +18,23 @@ import javax.swing.JPanel;
  * @author pcast
  */
 public class juego {
-    private JLabel[][] matrizLabel;
+    private JTextArea[][] matriz;
 
     public void GridLayout(JPanel tab) {
         int filas = 9;
         int col = 9;
         GridLayout gridLayout = new GridLayout(filas, col);
         tab.setLayout(gridLayout);
-        matrizLabel = new JLabel[filas][col];
+        matriz = new JTextArea[filas][col];
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < col; j++) {
-                JLabel label = new JLabel();
-                label.setPreferredSize(new Dimension(50, 50));
-                matrizLabel[i][j] = label;
-                tab.add(label);
-                label.setOpaque(true); // Make the label opaque so the background color is visible
-                label.setBackground(Color.RED);
+                JTextArea area = new JTextArea();
+                area.setPreferredSize(new Dimension(50, 50));
+                matriz[i][j] = area;
+                tab.add(area);
+                area.setOpaque(true); // Make the label opaque so the background color is visible
+                area.setBackground(Color.RED);
+                area.setBorder((Border) Color.BLUE);
             }
         }
     }
