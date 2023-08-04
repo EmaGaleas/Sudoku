@@ -16,6 +16,15 @@ public class tabSudoku extends javax.swing.JFrame {
         initComponents();
         juego s = new juego();
         s.GridLayout(tab);
+        s.cuadro1();
+        s.cuadro2();
+        s.cuadro3();
+        s.cuadro4();
+        s.cuadro5();
+        s.cuadro6();
+        s.cuadro7();
+        s.cuadro8();
+        s.cuadro9();
     }
 
 
@@ -99,9 +108,9 @@ public class tabSudoku extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(85, 85, 85)
                 .addComponent(jButton1)
-                .addGap(77, 77, 77)
+                .addGap(67, 67, 67)
                 .addComponent(jButton2)
                 .addGap(79, 79, 79)
                 .addComponent(jButton3)
