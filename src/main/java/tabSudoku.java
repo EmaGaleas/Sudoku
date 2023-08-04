@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class tabSudoku extends javax.swing.JFrame {
 
+    
+   
     /**
      * Creates new form tabSudoku
      */
@@ -29,6 +31,7 @@ public class tabSudoku extends javax.swing.JFrame {
         s.cuadro7();
         s.cuadro8();
         s.cuadro9();
+    
     }
 
 
@@ -85,12 +88,27 @@ public class tabSudoku extends javax.swing.JFrame {
 
         salir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         salir.setText("SALIR");
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
 
         submit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submit.setText("SUBIR RESPUESTAS");
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitActionPerformed(evt);
+            }
+        });
 
         rendirse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rendirse.setText("RENDIRESE");
+        rendirse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rendirseMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -145,6 +163,52 @@ public class tabSudoku extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_salirMouseClicked
+
+    private void rendirseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rendirseMouseClicked
+        JOptionPane.showMessageDialog(null, "TE HAS RENDIDO", "Info", JOptionPane.INFORMATION_MESSAGE);
+         juego s = new juego();
+        //s.gridLayout(tab);
+        
+    }//GEN-LAST:event_rendirseMouseClicked
+
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        juego s=new juego();
+        String[][] solution = s.getSolution();
+        String[][] userAnswers = new String[9][9];
+
+        // Obtener las respuestas ingresadas por el usuario
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                userAnswers[i][j] = s.matriz[i][j].getText();
+            }
+        }
+
+        // Comparar las respuestas del usuario con la solución
+        boolean correct = true;
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (!solution[i][j].equals(userAnswers[i][j])) {
+                    correct = false;
+                    break;
+                }
+            }
+            if (!correct) {
+                break;
+            }
+        }
+
+        if (correct) {
+            // Aquí puedes mostrar un mensaje o realizar alguna acción si las respuestas son correctas
+            JOptionPane.showMessageDialog(this, "¡Respuestas correctas!");
+        } else {
+            // Aquí puedes mostrar un mensaje o realizar alguna acción si las respuestas son incorrectas
+            JOptionPane.showMessageDialog(this, "¡Respuestas incorrectas!");
+        }
+    }//GEN-LAST:event_submitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -179,6 +243,7 @@ public class tabSudoku extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
