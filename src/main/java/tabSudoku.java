@@ -18,7 +18,8 @@ public class tabSudoku extends javax.swing.JFrame {
     public tabSudoku() {
         initComponents();
         juego s = new juego();
-        s.GridLayout(tab);
+        //s.gridLayout(tab);
+        s.crearTablero(tab);
         s.cuadro1();
         s.cuadro2();
         s.cuadro3();
