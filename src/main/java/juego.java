@@ -14,15 +14,13 @@ import javax.swing.JPanel;
  * @author pcast
  */
 public class juego {
-         private JLabel[][] matrizLabel;
-
-
+         private JButton[][] matrizLabel;
 
     public void GridLayout(JPanel tab) {
         int filas = 9;
         int col = 9;
         GridLayout gridLayout = new GridLayout(filas, col);
         tab.setLayout(gridLayout);
-        matrizLabel = new JLabel[filas][col];
+        matrizLabel = new JButton[filas][col];
     }
 }
