@@ -176,13 +176,13 @@ public class tabSudoku extends javax.swing.JFrame {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         juego s=new juego();
-        String[][] solution = s.getSolution();
-        String[][] userAnswers = new String[9][9];
+        String[][] solucion = s.getSolution();
+        String[][] ingresado = new String[9][9];
 
         // Obtener las respuestas ingresadas por el usuario
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                userAnswers[i][j] = s.matriz[i][j].getText();
+                ingresado[i][j] = s.matriz[i][j].getText();
             }
         }
 
@@ -190,7 +190,7 @@ public class tabSudoku extends javax.swing.JFrame {
         boolean correct = true;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                if (!solution[i][j].equals(userAnswers[i][j])) {
+                if (!solucion[i][j].equals(ingresado[i][j])) {
                     correct = false;
                     break;
                 }
@@ -201,10 +201,8 @@ public class tabSudoku extends javax.swing.JFrame {
         }
 
         if (correct) {
-            // Aquí puedes mostrar un mensaje o realizar alguna acción si las respuestas son correctas
             JOptionPane.showMessageDialog(this, "¡Respuestas correctas!");
-        } else {
-            // Aquí puedes mostrar un mensaje o realizar alguna acción si las respuestas son incorrectas
+        } else{         
             JOptionPane.showMessageDialog(this, "¡Respuestas incorrectas!");
         }
     }//GEN-LAST:event_submitActionPerformed

@@ -45,25 +45,8 @@ public class juego {
         resolverSudoku();
         
     }
-    private void mostrarInformacionPieza() {
-      // if (true==resolverSudoku()) {
-       //     JOptionPane.showMessageDialog(null, "TE HAS RENDIDO", "Info", JOptionPane.INFORMATION_MESSAGE);
-        //}
-    }
- //funcion antes de todo 
-    public boolean repetidoEnCuadro(int numero, int fila, int columna) {
-        for (int i = fila; i < fila + 3; i++) {
-            for (int j = columna; j < columna + 3; j++) {
-                String numeroFIND = matriz[i][j].getText().trim();
 
-                if (numeroFIND.equals(Integer.toString(numero))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
- //funcion antes de todo 
+ //funcion antes de todo verficaba ingresado
     public boolean repetidoEnFilaColumna(int numero, int fila, int columna) {
         for (int i = 0; i < 9; i++) {
             if (matriz[fila][i].getText().equals(Integer.toString(numero)) || 
@@ -142,8 +125,6 @@ public class juego {
     private void generarNumerosAleatorios() {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         mezclaArray(nums); // Mezclar el array de números válidos
-
-        // Llenar algunos cuadros con números aleatorios sin violar las reglas del Sudoku
         int cuadrosALlenar = 35; // Cantidad de cuadros a llenar con números aleatorios
         while (cuadrosALlenar > 0) {
             int row = random.nextInt(9);
@@ -158,7 +139,7 @@ public class juego {
         }
     }
 //pendiente
-    private void respuestaSudoku() {
+    private void getSudoku() {
         resolverSudoku();
     }
 //resolver
