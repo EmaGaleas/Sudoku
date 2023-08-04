@@ -32,7 +32,7 @@ public class juego {
                 area.setPreferredSize(new Dimension(50, 50));
                 matriz[i][j] = area;
                 tab.add(area);
-                area.setOpaque(true); // Make the label opaque so the background color is visible
+                area.setOpaque(true);
                 area.setBackground(Color.RED);
                 area.setBorder((Border) Color.BLUE);
             }
