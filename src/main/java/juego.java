@@ -2,8 +2,10 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -37,14 +39,57 @@ public class juego {
             }
         }
     }
+    private void mostrarInformacionPieza() {
+        if (matriz==null) {
+            JOptionPane.showMessageDialog(null, "TE HAS RENDIDO", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+ 
+    public boolean repetidoEnCuadro(int numero, int fila, int columna) {
+        for (int i = fila; i < fila + 3; i++) {
+            for (int j = columna; j < columna + 3; j++) {
+                String numeroFIND = matriz[i][j].getText().trim();
 
-    public void cuadro1(){//columna 0,1 y 2 y fila 0, 1 y 2
+                if (numeroFIND.equals(Integer.toString(numero))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean repetidoEnFilaColumna(int numero, int fila, int columna) {
+        for (int i = 0; i < 9; i++) {
+            if (matriz[fila][i].getText().equals(Integer.toString(numero)) || 
+                matriz[i][columna].getText().equals(Integer.toString(numero))) { 
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void cuadro1() {
+        Random random = new Random();
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
+                int randomNumber;
+                boolean isRepeated;
+
+                do {
+                    randomNumber = random.nextInt(9) + 1;
+                    isRepeated = repetidoEnCuadro(randomNumber, i, j) || repetidoEnFilaColumna(randomNumber, i, j);
+                } while (isRepeated);
+
+                matriz[i][j].setText(Integer.toString(randomNumber));
                 matriz[i][j].setBackground(Color.WHITE);
             }
         }
     }
+    /*
+    
+    */
+
     public void cuadro2(){//columna 3,4 y 5 y fila 0, 1 y 2
         for (int i = 0; i < 3; i++) {
             for (int j = 3; j < 6; j++) {

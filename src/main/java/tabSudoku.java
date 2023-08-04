@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -36,9 +39,9 @@ public class tabSudoku extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         tab = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
+        rendirse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -79,14 +82,14 @@ public class tabSudoku extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(51, 0, 102));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("SALIR");
+        salir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        salir.setText("SALIR");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("SUBIR RESPUESTAS");
+        submit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        submit.setText("SUBIR RESPUESTAS");
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton3.setText("RENDIRESE");
+        rendirse.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rendirse.setText("RENDIRESE");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -95,25 +98,25 @@ public class tabSudoku extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(submit)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(rendirse)
                         .addGap(33, 33, 33)))
                 .addGap(26, 26, 26))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addComponent(jButton1)
+                .addComponent(salir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(jButton1)
+                .addComponent(salir)
                 .addGap(67, 67, 67)
-                .addComponent(jButton2)
+                .addComponent(submit)
                 .addGap(79, 79, 79)
-                .addComponent(jButton3)
+                .addComponent(rendirse)
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
@@ -177,12 +180,12 @@ public class tabSudoku extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton rendirse;
+    private javax.swing.JButton salir;
+    private javax.swing.JButton submit;
     private javax.swing.JPanel tab;
     // End of variables declaration//GEN-END:variables
 }
