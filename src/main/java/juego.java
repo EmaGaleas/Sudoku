@@ -32,9 +32,9 @@ public class juego {
                 area.setPreferredSize(new Dimension(50, 50));
                 matriz[i][j] = area;
                 tab.add(area);
-                area.setOpaque(true);
-                area.setBackground(Color.RED);
-                area.setBorder((Border) Color.BLUE);
+               // area.setOpaque(true);
+              //  area.setBackground(Color.RED);
+                //area.setBorder((Border) Color.BLUE);
             }
         }
     }
